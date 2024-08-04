@@ -38,34 +38,32 @@ export function ContactInfoCard({
   };
 
   return (
-    <>
-      <div className={styles["wrap"]}>
-        <div
-          style={sizes[size].wrapSize}
-          className={styles["contact-info-card-wrap"]}
-        >
-          <img
-            src={personImage}
-            style={sizes[size].photoSize}
-            alt={`image of ${headerValue}`}
-            className={styles["contact-img"]}
-          />
-          <div className={styles["contact-info-wrap"]}>
-            <h1 className={`${styles["header"]} ${styles[`header-${size}`]}`}>
-              {headerValue}
-            </h1>
-            <ul className={styles["contact-info"]}>
-              {propertiesFields != null
-                ? propertiesFields.map((propertiesField, i) => (
-                    <li className={styles[`contact-field-${size}`]} key={i}>
-                      {propertiesField}
-                    </li>
-                  ))
-                : ""}
-            </ul>
-          </div>
+    <div className={styles["wrap"]}>
+      <div
+        style={sizes[size].wrapSize}
+        className={styles["contact-info-card-wrap"]}
+      >
+        <img
+          src={personImage}
+          style={sizes[size].photoSize}
+          alt={`image of ${headerValue}`}
+          className={styles["contact-img"]}
+        />
+        <div className={styles["contact-info-wrap"]}>
+          <h1 className={`${styles["header"]} ${styles[`header-${size}`]}`}>
+            {headerValue}
+          </h1>
+          <ul className={styles["contact-info"]}>
+            {propertiesFields != null
+              ? propertiesFields.map((propertiesField, i) => (
+                  <li className={styles[`contact-field-${size}`]} key={i}>
+                    {propertiesField}
+                  </li>
+                ))
+              : ""}
+          </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 }

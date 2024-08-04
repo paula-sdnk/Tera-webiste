@@ -1,7 +1,7 @@
 import styles from "src/styles/TeamPage.module.css";
 import ExecutiveCard from "src/components/ExecutiveCard";
-import PlayerCard from "src/components/PlayerCard";
 import NewsCard from "../components/NewsCard";
+import players from "src/assets/players.json";
 export function KomandaPage() {
   const contactsField1 = [
     <>
@@ -24,6 +24,18 @@ export function KomandaPage() {
       </span>
     </>,
   ];
+
+  const renderPlayerCards = (category) => {
+    return players[category].map((player, index) => (
+      <ExecutiveCard
+        key={index}
+        size="medium"
+        name={player.name}
+        dateOfBirth={player.dateOfBirth}
+      />
+    ));
+  };
+
   return (
     <>
       <div className={styles["page-wrap"]}>
@@ -39,8 +51,18 @@ export function KomandaPage() {
               <h1 className={styles["header"]}>Treneriai</h1>
             </div>
             <div className={styles["team-executives"]}>
-              <ExecutiveCard size="large" />
-              <ExecutiveCard size="large" />
+              <ExecutiveCard
+                size="large"
+                name="Sergejus Vasiljevas"
+                src="src/assets/Vasiljevas.png"
+                dateOfBirth="1975-06-07"
+              />
+              <ExecutiveCard
+                size="large"
+                name="Aleksejus Kliosovas"
+                src="src/assets/hamburger.jpg"
+                dateOfBirth="1975-10-27"
+              />
             </div>
             <div className={styles["team-table-wrap"]}>
               <div className={styles["header-wrap"]}>
@@ -53,11 +75,7 @@ export function KomandaPage() {
                 <h1 className={styles["header"]}>Puolėjai</h1>
               </div>
               <div className={styles["team-table"]}>
-                <ExecutiveCard size="medium" />
-                <ExecutiveCard size="medium" />
-                <ExecutiveCard size="medium" />
-                <ExecutiveCard size="medium" />
-                <ExecutiveCard size="medium" />
+                {renderPlayerCards("Puolėjai")}
               </div>
               <div className={styles["header-wrap"]}>
                 <div className={styles["stripe"]}>
@@ -69,12 +87,7 @@ export function KomandaPage() {
                 <h1 className={styles["header"]}>Saugai</h1>
               </div>
               <div className={styles["team-table"]}>
-                <ExecutiveCard size="medium" />
-                <ExecutiveCard size="medium" />
-                <ExecutiveCard size="medium" />
-                <ExecutiveCard size="medium" />
-                <ExecutiveCard size="medium" />
-                <ExecutiveCard size="medium" />
+                {renderPlayerCards("Saugai")}
               </div>
               <div className={styles["header-wrap"]}>
                 <div className={styles["stripe"]}>
@@ -86,12 +99,7 @@ export function KomandaPage() {
                 <h1 className={styles["header"]}>Ginėjai</h1>
               </div>
               <div className={styles["team-table"]}>
-                <ExecutiveCard size="medium" />
-                <ExecutiveCard size="medium" />
-                <ExecutiveCard size="medium" />
-                <ExecutiveCard size="medium" />
-                <ExecutiveCard size="medium" />
-                <ExecutiveCard size="medium" />
+                {renderPlayerCards("Gynėjai")}
               </div>
               <div className={styles["header-wrap"]}>
                 <div className={styles["stripe"]}>
@@ -103,32 +111,9 @@ export function KomandaPage() {
                 <h1 className={styles["header"]}>Vartininkai</h1>
               </div>
               <div className={styles["team-table"]}>
-                <ExecutiveCard size="medium" />
-                <ExecutiveCard size="medium" />
+                {renderPlayerCards("Vartininkai")}
               </div>
             </div>
-          </section>
-          <section className={styles["best-players-list"]}>
-            <div
-              style={{
-                background: "white",
-                width: "100%",
-              }}
-              className={styles["header-wrap"]}
-            >
-              <div className={styles["stripe"]}>
-                <div className={styles["green"]} />
-                <div className={styles["white"]} />
-                <div className={styles["red"]} />
-                <div className={styles["black"]} />
-              </div>
-              <h1 className={styles["header"]}>Naujienos</h1>
-            </div>
-            <NewsCard
-              postPath={
-                "https://www.facebook.com/permalink.php?story_fbid=pfbid02m9XNELpXGcu1Sh5Tz7FVkch2HVwutejWGTyyJ4s9brhUYmVNYCLA7u1SNdBZpi82l&id=100060685733928"
-              }
-            />
           </section>
         </div>
       </div>

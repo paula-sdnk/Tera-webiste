@@ -1,0 +1,27 @@
+{
+  "Vartininkai": [{ "name": "Edvinas Vencius", "dateOfBirth": "2005-06-28" }],
+  "Gynėjai": [
+    { "name": "Vadim Švaikevič", "dateOfBirth": "1983-06-12" },
+    { "name": "Vladimir Chmelevskij", "dateOfBirth": "1984-10-03" },
+    { "name": "Paulius Širvys", "dateOfBirth": "1993-03-31" },
+    { "name": "Justinas Jurčiukonis", "dateOfBirth": "1997-04-21" },
+    { "name": "Artem Nastaius", "dateOfBirth": "2006-07-25" },
+    { "name": "Simonas Laužikas", "dateOfBirth": "1992-08-28" },
+    { "name": "Vytautas Velička", "dateOfBirth": "1990-09-10" },
+    { "name": "Oleksandr Saprykin", "dateOfBirth": "1986-01-17" }
+  ],
+  "Saugai": [
+    { "name": "Liudvikas Velička", "dateOfBirth": "1989-09-01" },
+    { "name": "Oleksij Mazurenko", "dateOfBirth": "1979-11-28" },
+    { "name": "Igor Choroškin", "dateOfBirth": "2006-12-18" },
+    { "name": "Viačeslav Trušakov", "dateOfBirth": "2005-12-27" },
+    { "name": "Maksimilian Veršinin", "dateOfBirth": "2006-02-23" },
+    { "name": "Edvinas Bogdanovas", "dateOfBirth": "1998-08-07" },
+    { "name": "Edvin Donat Vasiljev", "dateOfBirth": "2005-09-24" }
+  ],
+  "Puolėjai": [
+    { "name": "Antanas Velutovičius", "dateOfBirth": "1996-02-08" },
+    { "name": "Artem Shevchenko", "dateOfBirth": "2003-09-20" },
+    { "name": "Herkus Adomaitis", "dateOfBirth": "2005-07-04" }
+  ]
+}

@@ -90,34 +90,34 @@
   justify-content: center;
 }
 .more-info-button {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-radius: 5px;
   background-color: white;
   border: 0px;
   padding: 0px 25px 0px 25px;
   font-weight: bold;
   font-size: 18px;
+  font-family: "Cabin";
+  margin: 0;
   transition: 300ms;
+  height: 40px;
 }
 .more-info-button:hover {
   background-color: rgba(240, 240, 240, 1);
-  padding: 0px 15px 0px 15px;
-
+  padding: 0px 20px 0px 20px;
+  color: black;
   border: 0px;
   cursor: pointer;
   transition: 300ms;
 }
 
-.stadium-info {
+.league-info {
   font-size: 24px;
   font-weight: bold;
-}
-.time-info {
-  font-size: 40px;
-  font-weight: bold;
+  padding-bottom: 10px;
 }
 .date-info {
-  font-size: 20px;
+  font-size: 30px;
+  font-weight: bold;
 }
 @media all and (max-width: 1400px) {
   .matchday-wrap {
@@ -125,15 +125,6 @@
     height: 400px;
     background-size: 800px;
   }
-}
-.long-arrow {
-  height: 40px;
-  width: 80px;
-  transition: 300ms;
-}
-.more-info-button:hover > .long-arrow {
-  width: 70px;
-  transition: 300ms;
 }
 
 @media all and (max-width: 500px) {
@@ -154,18 +145,11 @@
   .more-info-container {
     height: 30px;
   }
-  .long-arrow {
-    height: 30px;
-    width: 50px;
-    transition: 300ms;
-  }
-  .more-info-button:hover > .long-arrow {
-    width: 60px;
-    transition: 300ms;
-  }
   .more-info-button {
     font-size: 14px;
+    align-self: center;
     padding: 0px 10px 0px 10px;
+    height: 30px;
   }
   .stadium-info {
     font-size: 20px;
@@ -198,5 +182,7 @@
   .more-info-button {
     font-size: 12px;
     padding: 0px 10px 0px 10px;
+    align-self: center;
+    height: 26px;
   }
 }

@@ -114,7 +114,7 @@ function ArticleHeader() {
             maxWidth: "1300px",
             width: "100%",
             height: "100%",
-            background: `no-repeat url("${bgHandImage}")`,
+            // background: `no-repeat url("${bgHandImage}")`,
             backgroundPosition: "100% 100%",
             ...(windowWidth < 800 && { right: "-20%", width: "200%" }),
             ...(windowWidth < 600 && { right: "-40%", width: "200%" }),

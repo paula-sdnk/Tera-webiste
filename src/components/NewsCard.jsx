@@ -10,7 +10,7 @@ function NewsCard({ postPath }) {
         <div className={styles["card-content"]}>
           <div>
             <h1 className={styles["header"]}>
-              <i>Pasiruosimas sezuonui pradetas</i>
+              <i>Pasiruosimas sezonui pradetas</i>
             </h1>
             <p className={styles["content-snippet"]}>
               Prieš pradedant antrojo rato mūšius PAFF - ŠAFF...
