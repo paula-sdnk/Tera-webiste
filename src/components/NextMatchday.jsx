@@ -82,7 +82,12 @@ export function NextMatchday() {
           if (nameLink.innerText.toLowerCase().includes("tera")) continue;
           imageSrc = image.src;
         }
-        setAwayImgSrc(imageSrc);
+        if (imageSrc) {
+          const proxiedImageSrc = `/api/image-proxy${imageSrc.substring(
+            baseUrl.length
+          )}`;
+          setAwayImgSrc(proxiedImageSrc);
+        }
       });
   }, [closestMatch]);
 
