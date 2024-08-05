@@ -48,7 +48,7 @@ export function Footer({ setFooterY }) {
             className={`${styles["section-about-club"]} ${styles["footer-section"]}`}
           >
             <h2>Apie Klubą</h2>
-            <p>
+            <p style={{ width: "100%" }}>
               Vilniaus futbolo klubas „Tera“, o trumpai Vilniaus „Tera“ arba FK
               „Tera“ – Lietuvos futbolo klubas iš Vilniaus Sovietmečiu komanda
               įsteigta prie Vilniaus prie troleibuso parko, kuris įkurtas 1956
