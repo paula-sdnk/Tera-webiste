@@ -11,11 +11,6 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
-      "/another-api": {
-        target: "http://another-target.com",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/another-api/, ""),
-      },
     },
   },
   base: "",
@@ -24,13 +19,5 @@ export default defineConfig({
     alias: {
       src: "/src",
     },
-  },
-  rewrites() {
-    return [
-      {
-        source: "/*",
-        destination: "",
-      },
-    ];
   },
 });
