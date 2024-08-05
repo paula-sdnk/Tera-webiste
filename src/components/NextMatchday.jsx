@@ -65,7 +65,7 @@ export function NextMatchday() {
 
   useEffect(() => {
     if (!closestMatch) return;
-    const baseUrl = "http://www.vilniausfutbolas.lt";
+    const baseUrl = "https://www.vilniausfutbolas.lt";
     fetch(`/api${closestMatch.url.substring(baseUrl.length)}`)
       .then((data) => data.text())
       .then((html) => {
