@@ -1,29 +1,31 @@
 import styles from "src/styles/TeamPage.module.css";
 import ExecutiveCard from "src/components/ExecutiveCard";
-import NewsCard from "../components/NewsCard";
 import players from "src/assets/players.json";
-export function KomandaPage() {
-  const contactsField1 = [
-    <>
-      <h2>{"Sergejus Vasiljevas"}</h2>
-    </>,
-    <>
-      <span>
-        Gimimo metai: <b>1900-01-01</b>
-      </span>
-    </>,
-  ];
+import treneris1 from "src/assets/Vasiljevas.png";
+import treneris2 from "src/assets/hamburger.jpg";
 
-  const contactsField2 = [
-    <>
-      <h2>{"Aleksejus Kliosovas"}</h2>
-    </>,
-    <>
-      <span>
-        Gimimo metai: <b>1900-01-01</b>
-      </span>
-    </>,
-  ];
+export function KomandaPage() {
+  // const contactsField1 = [
+  //   <>
+  //     <h2>{"Sergejus Vasiljevas"}</h2>
+  //   </>,
+  //   <>
+  //     <span>
+  //       Gimimo metai: <b>1900-01-01</b>
+  //     </span>
+  //   </>,
+  // ];
+
+  // const contactsField2 = [
+  //   <>
+  //     <h2>{"Aleksejus Kliosovas"}</h2>
+  //   </>,
+  //   <>
+  //     <span>
+  //       Gimimo metai: <b>1900-01-01</b>
+  //     </span>
+  //   </>,
+  // ];
 
   const renderPlayerCards = (category) => {
     return players[category].map((player, index) => (
@@ -54,13 +56,13 @@ export function KomandaPage() {
               <ExecutiveCard
                 size="large"
                 name="Sergejus Vasiljevas"
-                src="src/assets/Vasiljevas.png"
+                src={treneris1}
                 dateOfBirth="1975-06-07"
               />
               <ExecutiveCard
                 size="large"
                 name="Aleksejus Kliosovas"
-                src="src/assets/hamburger.jpg"
+                src={treneris2}
                 dateOfBirth="1975-10-27"
               />
             </div>
