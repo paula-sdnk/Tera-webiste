@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "http://www.vilniausfutbolas.lt/:match*"
+      "source": "/api/:path*",
+      "destination": "http://www.vilniausfutbolas.lt/:path*"
     },
     {
       "source": "/(.*)",
