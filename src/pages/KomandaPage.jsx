@@ -98,7 +98,7 @@ export function KomandaPage() {
                   <div className={styles["red"]} />
                   <div className={styles["black"]} />
                 </div>
-                <h1 className={styles["header"]}>Ginėjai</h1>
+                <h1 className={styles["header"]}>Gynėjai</h1>
               </div>
               <div className={styles["team-table"]}>
                 {renderPlayerCards("Gynėjai")}

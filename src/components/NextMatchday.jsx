@@ -7,7 +7,7 @@ export function NextMatchday() {
   const [matches, setMatches] = useState([]);
   const [closestMatch, setClosestMatch] = useState(null);
   const [awayImgSrc, setAwayImgSrc] = useState(null);
-  const [matchDetails, setMatchDetails] = useState(null);
+  const [stadiumName, setStadium] = useState(null);
 
   const parseDate = (dateStr) => {
     const [year, month, day] = dateStr.split("-");
@@ -45,6 +45,7 @@ export function NextMatchday() {
           const cells = row.querySelectorAll("td");
           const entry = {
             date: cells[0].innerText,
+            time: cells[1].innerText,
             league: cells[3].innerText,
             team1: cells[4].textContent,
             url: cells[5].querySelector("a").href,
@@ -86,6 +87,32 @@ export function NextMatchday() {
       });
   }, [closestMatch]);
 
+  useEffect(() => {
+    if (!closestMatch) return;
+    const baseUrl = "http://www.vilniausfutbolas.lt";
+    fetch(`/api${closestMatch.url.substring(baseUrl.length)}`)
+      .then((data) => data.text())
+      .then((html) => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, "text/html");
+        const matchContainers = doc
+          .getElementById("match-info")
+          .querySelectorAll(".span4.no-space.center-teams");
+        let stadiumName = "";
+        for (const container of matchContainers) {
+          const stadiumLink = container.querySelector("a");
+          if (stadiumLink) {
+            stadiumName = stadiumLink.innerText;
+            break;
+          }
+        }
+        setStadium(stadiumName);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [closestMatch]);
+
   return (
     <>
       <div style={{}} id="next-match" className={styles["matchday-wrap"]}>
@@ -103,6 +130,16 @@ export function NextMatchday() {
               <span className={styles["date-info"]}>
                 <b>{closestMatch ? closestMatch.date : ""}</b>
               </span>
+              <span className={styles["time-info"]}>
+                <b>
+                  {closestMatch && closestMatch.time !== "00:00"
+                    ? closestMatch.time
+                    : " "}
+                </b>
+              </span>
+              <span className={styles["stadium-info"]}>
+                {stadiumName ? stadiumName : ""}
+              </span>
             </div>
             <div className={`${styles["team-container"]} ${styles["right"]}`}>
               <div className={styles["logo-container"]}>
@@ -115,7 +152,7 @@ export function NextMatchday() {
                 />
               </div>
               <div className={styles["more-info-container"]}>
-                <a href="http://www.vilniausfutbolas.lt/komanda/FK-Tera/210/20/32">
+                <a href={closestMatch ? closestMatch.url : "#"}>
                   <button className={styles["more-info-button"]}>
                     Apie Rungtynes
                   </button>

@@ -111,13 +111,19 @@
 }
 
 .league-info {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
-  padding-bottom: 10px;
 }
 .date-info {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
+}
+.time-info {
+  font-size: 36px;
+  font-weight: bold;
+}
+.stadium-info {
+  font-size: 20px;
 }
 @media all and (max-width: 1400px) {
   .matchday-wrap {
@@ -151,26 +157,22 @@
     padding: 0px 10px 0px 10px;
     height: 30px;
   }
-  .stadium-info {
-    font-size: 20px;
+  .league-info {
+    font-size: 16px;
     font-weight: bold;
-  }
-  .time-info {
-    font-size: 20px;
-    font-weight: bold;
+    text-align: center;
   }
   .date-info {
+    font-size: 14px;
+  }
+  .stadium-info {
     font-size: 14px;
   }
 }
 
 @media all and (max-width: 380px) {
-  .stadium-info {
-    font-size: 14px;
-    font-weight: bold;
-  }
-  .time-info {
-    font-size: 28px;
+  .league-info {
+    font-size: 16px;
     font-weight: bold;
   }
   .date-info {

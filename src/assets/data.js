@@ -1,6 +1,6 @@
 export const BASE_URL = "";
 export const CONTACTS = {
-  name: "Sergejus Vasilievas",
+  name: "Sergejus Vasiljevas",
   statusInClub: "Direktorius",
   email: "tera.vilnius@gmail.com",
   phoneNumber: "+37068710033",
