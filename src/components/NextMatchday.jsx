@@ -123,24 +123,22 @@ export function NextMatchday() {
                 <img src={teamHome} />
               </div>
             </div>
-            <div className={styles["match-info"]}>
-              <span className={styles["league-info"]}>
-                {closestMatch ? closestMatch.league : ""}
-              </span>
-              <span className={styles["date-info"]}>
-                <b>{closestMatch ? closestMatch.date : ""}</b>
-              </span>
-              <span className={styles["time-info"]}>
-                <b>
-                  {closestMatch && closestMatch.time !== "00:00"
-                    ? closestMatch.time
-                    : " "}
-                </b>
-              </span>
-              <span className={styles["stadium-info"]}>
-                {stadiumName ? stadiumName : ""}
-              </span>
-            </div>
+            {closestMatch && (
+              <div className={styles["match-info"]}>
+                <span className={styles["league-info"]}>
+                  {closestMatch.league}
+                </span>
+                <span className={styles["date-info"]}>
+                  <b>{closestMatch.date}</b>
+                </span>
+                {closestMatch.time !== "00:00" && (
+                  <span className={styles["time-info"]}>
+                    <b>{closestMatch.time}</b>
+                  </span>
+                )}
+                <span className={styles["stadium-info"]}>{stadiumName}</span>
+              </div>
+            )}
             <div className={`${styles["team-container"]} ${styles["right"]}`}>
               <div className={styles["logo-container"]}>
                 <img
