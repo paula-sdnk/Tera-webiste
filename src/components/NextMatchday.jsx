@@ -9,9 +9,10 @@ export function NextMatchday() {
   const [awayImgSrc, setAwayImgSrc] = useState(null);
   const [stadiumName, setStadium] = useState(null);
 
-  const parseDate = (dateStr) => {
+  const parseDateTime = (dateStr, timeStr) => {
     const [year, month, day] = dateStr.split("-");
-    return new Date(year, month - 1, day);
+    const [hours, minutes] = timeStr.split(":");
+    return new Date(year, month - 1, day, hours, minutes);
   };
 
   const getClosestFutureMatch = (matches) => {
@@ -20,7 +21,7 @@ export function NextMatchday() {
     const futureMatches = matches
       .map((match) => ({
         ...match,
-        dateObj: parseDate(match.date),
+        dateObj: parseDateTime(match.date, match.time),
       }))
       .filter((match) => match.dateObj > now);
 
