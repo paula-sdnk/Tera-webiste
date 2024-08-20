@@ -13,10 +13,9 @@ export const ROUTES = [
     text: "Pagrindinis",
     isSelected: false,
   },
-
   {
-    path: `${BASE_URL}/parama`,
-    text: "1.2% Parama",
+    path: `${BASE_URL}/klubas`,
+    text: "Apie klubą",
     isSelected: false,
   },
   {
@@ -25,8 +24,8 @@ export const ROUTES = [
     isSelected: false,
   },
   {
-    path: `${BASE_URL}/klubas`,
-    text: "Apie klubą",
+    path: `${BASE_URL}/parama`,
+    text: "1.2% Parama",
     isSelected: false,
   },
   {
