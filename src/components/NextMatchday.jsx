@@ -8,6 +8,7 @@ export function NextMatchday() {
   const [closestMatch, setClosestMatch] = useState(null);
   const [awayImgSrc, setAwayImgSrc] = useState(null);
   const [stadiumName, setStadium] = useState(null);
+  const [isHomeTeamTera, setIsHomeTeamTera] = useState(false);
 
   const parseDateTime = (dateStr, timeStr) => {
     const [year, month, day] = dateStr.split("-");
@@ -76,15 +77,24 @@ export function NextMatchday() {
         const matchContainers = doc
           .getElementById("match-info")
           .querySelectorAll(".span4.center-teams");
-        let imageSrc = "";
+        let teraFirst = false;
+        let opponentImageSrc = "";
+
         for (const container of matchContainers) {
           const [image] = container.getElementsByTagName("img");
           const nameLink = container.querySelector("h3 > a");
+
           if (!image) continue;
-          if (nameLink.innerText.toLowerCase().includes("tera")) continue;
-          imageSrc = image.src;
+
+          if (nameLink.innerText.toLowerCase().includes("tera")) {
+            teraFirst = !opponentImageSrc;
+          } else {
+            opponentImageSrc = `/api${image.src.substring(baseUrl.length)}`;
+          }
         }
-        setAwayImgSrc(`/api${imageSrc.substring(baseUrl.length)}`);
+
+        setAwayImgSrc(opponentImageSrc);
+        setIsHomeTeamTera(teraFirst);
       });
   }, [closestMatch]);
 
@@ -121,7 +131,11 @@ export function NextMatchday() {
           <div className={styles["matchday-content"]}>
             <div className={`${styles["team-container"]} ${styles["left"]}`}>
               <div className={styles["logo-container"]}>
-                <img src={teamHome} />
+                {isHomeTeamTera ? (
+                  <img src={teamHome} alt="Tera Team Logo" />
+                ) : (
+                  <img src={awayImgSrc} alt="Opponent Team Logo" />
+                )}
               </div>
             </div>
             {closestMatch && (
@@ -142,13 +156,11 @@ export function NextMatchday() {
             )}
             <div className={`${styles["team-container"]} ${styles["right"]}`}>
               <div className={styles["logo-container"]}>
-                <img
-                  src={awayImgSrc}
-                  style={{
-                    mixBlendMode: "multiply",
-                    backgroundColor: "red",
-                  }}
-                />
+                {!isHomeTeamTera ? (
+                  <img src={teamHome} alt="Tera Team Logo" />
+                ) : (
+                  <img src={awayImgSrc} alt="Opponent Team Logo" />
+                )}
               </div>
               <div className={styles["more-info-container"]}>
                 <a href={closestMatch ? closestMatch.url : "#"}>
