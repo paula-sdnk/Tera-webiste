@@ -17,14 +17,28 @@ export const paragraph1 = {
     </>
   ),
 };
+// export const paragraph2 = {
+//   header: "Ką už tai gausiu?",
+//   content: (
+//     <>
+//       Kiekvienas dirbantysis Lietuvoje žmogus moka pajamas, tačiau ne visi žino,
+//       kad dalį GPM (1,2%) nuskaičiuoto nuo algos tu gali paskirti mylimai
+//       organizacijai: futbolo klubui, mokyklai ir t.t. Priešingai, 1,2% tavo
+//       pajamų nukeliauja į valstybės biudžetą.
+//     </>
+//   ),
+// };
+
 export const paragraph2 = {
-  header: "Ką už tai gausiu?",
+  header: "Kaip man prisidėti prie Komandos?",
   content: (
     <>
-      Kiekvienas dirbantysis Lietuvoje žmogus moka pajamas, tačiau ne visi žino,
-      kad dalį GPM (1,2%) nuskaičiuoto nuo algos tu gali paskirti mylimai
-      organizacijai: futbolo klubui, mokyklai ir t.t. Priešingai, 1,2% tavo
-      pajamų nukeliauja į valstybės biudžetą.
+      Džiaukis, VMI (Valstybinė mokesčių inspekcija) jau pasirupino šiuo
+      klausimu. Tu gali užpildyti prašymą pervesti pajamų mokesčio dalį per VMI
+      Elektroninio deklaravimo sistemą{" "}
+      <a href="https://deklaravimas.vmi.lt">(EDS)</a> . O tam, kad tai padaryti
+      būtų lengviau, naudokis šiame video ar prezentacijoje pavaizduota kelių
+      žingsnių instrukcija. Tai uztruks tik 6 minutės.
     </>
   ),
 };

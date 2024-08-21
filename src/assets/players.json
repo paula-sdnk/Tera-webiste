@@ -1,5 +1,6 @@
 {
   "Vartininkai": [
+    { "name": "Edvinas Vencius", "dateOfBirth": "2005-06-28" },
     { "name": "Sayriddin Kurbonov", "dateOfBirth": "1984-07-16" },
     { "name": "Matas Kalėda", "dateOfBirth": "2002-02-24" }
   ],
@@ -20,7 +21,6 @@
     { "name": "Igor Choroškin", "dateOfBirth": "2006-12-18" },
     { "name": "Viačeslav Trušakov", "dateOfBirth": "2005-12-27" },
     { "name": "Maksimilian Veršinin", "dateOfBirth": "2006-02-23" },
-    { "name": "Edvinas Bogdanovas", "dateOfBirth": "1998-08-07" },
     { "name": "Edvin Donat Vasiljev", "dateOfBirth": "2005-09-24" },
     { "name": "Mark Bogdevič", "dateOfBirth": "1996-07-02" },
     { "name": "Jude Pablo", "dateOfBirth": "1994-09-23" },

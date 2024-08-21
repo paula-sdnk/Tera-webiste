@@ -182,8 +182,8 @@ function ArticleHeader() {
             }}
           >
             <i>
-              Prisidėk Prie Komandos, <br /> Gauk Prizų <br />
-              Ir Viskas Tai Nemokamai!
+              Prisidėk Prie Komandos <br />
+              Ir Tapk Dalimi <br /> Mūsų Sėkmės Istorijos!
             </i>
           </h1>
         </div>
