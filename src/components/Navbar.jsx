@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "src/styles/navBar.module.css";
-import logo from "src/assets/logo_nobg.png";
+import logo from "src/assets/Tera_new.png";
 import menuIcon from "src/assets/menu.svg";
 import { Link, useLocation } from "react-router-dom";
 import { ROUTES } from "src/assets/data";

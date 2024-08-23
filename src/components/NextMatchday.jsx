@@ -1,5 +1,5 @@
 import styles from "src/styles/nextMatchday.module.css";
-import teamHome from "src/assets/logo_nobg.png";
+import teamHome from "src/assets/Tera_new.png";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 
