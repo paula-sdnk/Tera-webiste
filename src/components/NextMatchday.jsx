@@ -1,6 +1,6 @@
 import styles from "src/styles/nextMatchday.module.css";
 import teamHome from "src/assets/Tera_new.png";
-import unknownLogo from "src/assets/unknownLogo.png";
+import unknownLogo from "src/assets/Unknown.png";
 import { useEffect, useState, useRef } from "react";
 
 export function NextMatchday() {
