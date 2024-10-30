@@ -1,6 +1,6 @@
 import styles from "src/styles/nextMatchday.module.css";
 import teamHome from "src/assets/Tera_new.png";
-import { useNavigate } from "react-router-dom";
+import unknownLogo from "src/assets/unknownLogo.png";
 import { useEffect, useState, useRef } from "react";
 
 export function NextMatchday() {
@@ -124,55 +124,84 @@ export function NextMatchday() {
       });
   }, [closestMatch]);
 
-  return (
-    <>
-      <div style={{}} id="next-match" className={styles["matchday-wrap"]}>
+  if (!closestMatch) {
+    return (
+      <div id="next-match" className={styles["matchday-wrap"]}>
         <div className={styles["matchday-info-wrap"]}>
           <div className={styles["matchday-content"]}>
             <div className={`${styles["team-container"]} ${styles["left"]}`}>
               <div className={styles["logo-container"]}>
-                {isHomeTeamTera ? (
-                  <img src={teamHome} alt="Tera Team Logo" />
-                ) : (
-                  <img src={awayImgSrc} alt="Opponent Team Logo" />
-                )}
+                <img src={teamHome} alt="Tera Team Logo" />
               </div>
             </div>
-            {closestMatch && (
-              <div className={styles["match-info"]}>
-                <span className={styles["league-info"]}>
-                  {closestMatch.league}
-                </span>
-                <span className={styles["date-info"]}>
-                  <b>{closestMatch.date}</b>
-                </span>
-                {closestMatch.time !== "00:00" && (
-                  <span className={styles["time-info"]}>
-                    <b>{closestMatch.time}</b>
-                  </span>
-                )}
-                <span className={styles["stadium-info"]}>{stadiumName}</span>
-              </div>
-            )}
+            <div className={styles["match-info"]}>
+              <span className={styles["no-matchday-info"]}>
+                <b>Šiuo metu artimiausių rungtynių nėra.</b>
+              </span>
+              <span className={styles["news-info"]}>
+                Apie mūsų naujienas sužinosite{" "}
+                <a
+                  href="https://www.facebook.com/profile.php?id=100060685733928"
+                  target="_blank"
+                >
+                  ČIA
+                </a>
+              </span>
+            </div>
             <div className={`${styles["team-container"]} ${styles["right"]}`}>
               <div className={styles["logo-container"]}>
-                {!isHomeTeamTera ? (
-                  <img src={teamHome} alt="Tera Team Logo" />
-                ) : (
-                  <img src={awayImgSrc} alt="Opponent Team Logo" />
-                )}
-              </div>
-              <div className={styles["more-info-container"]}>
-                <a href={closestMatch ? closestMatch.url : "#"}>
-                  <button className={styles["more-info-button"]}>
-                    Apie Rungtynes
-                  </button>
-                </a>
+                <img src={unknownLogo} alt="Unknown Team Logo" />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    );
+  }
+
+  return (
+    <div id="next-match" className={styles["matchday-wrap"]}>
+      <div className={styles["matchday-info-wrap"]}>
+        <div className={styles["matchday-content"]}>
+          <div className={`${styles["team-container"]} ${styles["left"]}`}>
+            <div className={styles["logo-container"]}>
+              {isHomeTeamTera ? (
+                <img src={teamHome} alt="Tera Team Logo" />
+              ) : (
+                <img src={awayImgSrc} alt="Opponent Team Logo" />
+              )}
+            </div>
+          </div>
+          <div className={styles["match-info"]}>
+            <span className={styles["league-info"]}>{closestMatch.league}</span>
+            <span className={styles["date-info"]}>
+              <b>{closestMatch.date}</b>
+            </span>
+            {closestMatch.time !== "00:00" && (
+              <span className={styles["time-info"]}>
+                <b>{closestMatch.time}</b>
+              </span>
+            )}
+            <span className={styles["stadium-info"]}>{stadiumName}</span>
+          </div>
+          <div className={`${styles["team-container"]} ${styles["right"]}`}>
+            <div className={styles["logo-container"]}>
+              {!isHomeTeamTera ? (
+                <img src={teamHome} alt="Tera Team Logo" />
+              ) : (
+                <img src={awayImgSrc} alt="Opponent Team Logo" />
+              )}
+            </div>
+            <div className={styles["more-info-container"]}>
+              <a href={closestMatch.url}>
+                <button className={styles["more-info-button"]}>
+                  Apie Rungtynes
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

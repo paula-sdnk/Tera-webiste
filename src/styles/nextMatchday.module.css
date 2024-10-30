@@ -125,6 +125,16 @@
 .stadium-info {
   font-size: 20px;
 }
+.no-matchday-info {
+  font-size: 26px;
+  text-align: center;
+}
+.news-info {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
 @media all and (max-width: 1400px) {
   .matchday-wrap {
     width: 100%;
@@ -171,6 +181,15 @@
   .stadium-info {
     font-size: 14px;
   }
+  .no-matchday-info {
+    font-size: 16px;
+    text-align: center;
+  }
+  .news-info {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+  }
 }
 
 @media all and (max-width: 380px) {
@@ -180,6 +199,15 @@
   }
   .date-info {
     font-size: 16px;
+  }
+  .no-matchday-info {
+    font-size: 14px;
+    text-align: center;
+  }
+  .news-info {
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
   }
   .more-info-container {
     height: 26px;
