@@ -74,7 +74,7 @@ export const paragraph4 = {
       <br />
       FK Tera juridinio asmens kodas:{" "}
       <b>
-        <i>kodas</i>
+        <i>306353095</i>
       </b>
       <br />
       Mokesčio dalies dydis{" "}

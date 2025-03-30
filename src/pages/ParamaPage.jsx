@@ -33,14 +33,6 @@ export function ParamaPage() {
             imageSide={"left"}
             className={styles["section"]}
           ></ArticleSection>{" "}
-          {/* <ArticleSection
-            articleContent={paragraph3.content}
-            articleHeader={paragraph3.header}
-            showStripe={false}
-            imageUrl={sideImage3}
-            imageSide={"right"}
-            className={styles["section"]}
-          ></ArticleSection> */}
           <InstructionSection
             articleContent={paragraph4.content}
             articleHeader={paragraph4.header}
