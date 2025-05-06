@@ -8,7 +8,7 @@ export function LeagueTable() {
   const tableRef = useRef(null);
 
   useEffect(() => {
-    fetch("/api/komanda/FK-Tera/210/20/32")
+    fetch("/api/komanda/FK-Tera/210/20/34")
       .then((data) => data.text())
       .then((html) => {
         const parser = new DOMParser();
